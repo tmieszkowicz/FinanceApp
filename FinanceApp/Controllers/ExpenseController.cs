@@ -33,4 +33,9 @@ public class ExpenseController : Controller
         await _expenseService.Add(expense);
         return RedirectToAction("Index");
     }
+    public IActionResult GetChart()
+    {
+        var data = _expenseService.GetChartData();
+        return Json(data);
+    }
 }
